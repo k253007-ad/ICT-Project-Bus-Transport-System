@@ -19,4 +19,5 @@ li?.forEach(element => {
     element.onclick = ()=>{ 
         window.location.assign("/new.html")
     }
+
 });
