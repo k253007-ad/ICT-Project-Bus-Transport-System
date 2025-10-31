@@ -1,23 +1,23 @@
-const li = document.querySelectorAll("li");
+let stops = ["Chota Gate", "Digh Road", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town"];
+
+let stopsList = document.getElementById("stopsList");
+stopsList.innerHTML = stops.map(stop => `<li>${stop}</li>`).join('');
+
 function filterList() {
     const input = document.getElementById('searchInput');
     const filter = input.value.toLowerCase();
-    const ul = document.getElementById('stopsList');
+    
+    const li = document.querySelectorAll("li");
 
-    for (let i = 0; i < li.length; i++) {
-        const textValue = li[i].textContent || li[i].innerText;
+    li.forEach (item =>{
+        const textValue = item.textContent || item.innerText;
         if (textValue.toLowerCase().indexOf(filter) > -1) {
-            li[i].style.display = '';
+            item.style.display = '';
         } else {
-            li[i].style.display = 'none';
+            item.style.display = 'none';
         }
-    }
+    });
 }
-
-// let stops = ["Shah Faisal Town", "Model Colony", "Malir Cant", "Malir Halt", "Chota Gate", "Digh Road"];
-
-// let stopsList = document.getElementById("stopsList");
-// stopsList.innerHTML = stops.map(stop => `<li>${stop}</li>`).join('');
 
 const allLi = document.querySelectorAll("#stopsList li");
 allLi.forEach(element => {
@@ -37,21 +37,3 @@ allLi.forEach(element => {
         window.location.assign(`/stops.html?stop=${encodeURIComponent(stopName)}`);
     }
 });
-
-
-
-
-
-
-// let stops = ["Shah Faisal Town", "Model Colony", "Malir Cant", "Malir Halt", "Chota Gate"];
-
-// let stopsList = document.getElementById("stopsList");
-// stopsList.innerHTML = stops.map(stop => `<li>${stop}<li>`).join('');
-
-
-// li?.forEach(element => {
-//     element.onclick = ()=>{ 
-//         window.location.assign("/new.html")
-        
-//     }
-// });
