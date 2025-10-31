@@ -1,93 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
+let stops = ["Chota Gate", "Digh Road", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town"];
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>My Webpage</title>
-        <link rel="stylesheet" href="projectStyle.css">
-        <!-- <h1>Bus Transport System</h1>
-        <em>(Our Goal is to Make Transport System Easy)</em>
-        <hr> -->
-    </head>
+let stopsList = document.getElementById("stopsList");
+stopsList.innerHTML = stops.map(stop => `<li>${stop}</li>`).join('');
 
-    <body>
-        <form action="#">
-            <h1>Bus Transport System</h1>
-            <p style="text-align: center;"><em>(Our Goal is to Make Transport System Easy)</em></p>
-            <hr>
-            
-            <h2>Select Your Location</h2>
-            <div class="container">
-                <h1 style="background-color: #fff;">Bus-Stop Search</h1>
-                <input type="text" id="searchInput" placeholder="Search for stops...." onkeyup="filterList()">
-                <ul id="stopsList">
-                    <li>Shah Faisal Town</li>
-                    <li>Model Colony</li>
-                    <li>Malir Cant</li>
-                    <li>Malir Halt</li>
-                    <li>Chota Gate</li>
-                </ul>
-            </div>
-            <br>
-            <p style="text-align: center;">&copy;2025 My Website | All rights reserved</p>
-        </form>
+function filterList() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    
+    const li = document.querySelectorAll("li");
 
-        <script src="searchBar.js"></script>
+    li.forEach (item =>{
+        const textValue = item.textContent || item.innerText;
+        if (textValue.toLowerCase().indexOf(filter) > -1) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+const allLi = document.querySelectorAll("#stopsList li");
+allLi.forEach(element => {
+    element.style.margin = '0';
+    element.style.padding = '10px';
+    element.style.cursor = 'pointer';
+    
+    element.onclick = () => { 
+        const stopName = element.textContent;
         
-        <!-- <hr>
-        <div>
-            <h2>Introduction</h2>
-            <p>
-                My name is <b>Adnan Ahmed</b>.<br>
-                I am currently studying in <em>FAST University</em>.<br>
-                My Program is <i>BSE (1-b)</i><br>
-                My Roll No is <p style="color: green;">25K-3007</p>
-                Contact me:
-                <a href="k253007@nu.edu.pk">Send Email</a>
-
-            </p>
-        </div>
-
-        <img src="https://plus.unsplash.com/premium_photo-1673240367277-e1d394465b56?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069" 
-        style="width: 50vw; height: auto;"  alt="Some Mountains"><br>
-        <a href="https://plus.unsplash.com/premium_photo-1673240367277-e1d394465b56?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2069" 
-        target="_blank">Image Source</a>
-        <hr>
-
-        <h2>Other Stuff</h2>
-        <h3 style="color: green;"> My Favourate Games</h3>
-        <ul>
-            <li>Hollow Knight</li>
-            <li>Mobile Legends</li>
-            <li>Minecraft</li>
-            <li>Assassin's Creed</li>
-        </ul>
-        <h3 style="color: green;"> My Hobbies</h3>
-        <ol>
-            <li>Game Development</li>
-            <li>Making Tools For daily life</li>
-            <li>Playing Games</li>
-            <li>Collecting Gagets</li>
-        </ol>
-        <hr>
-
-        <div2>
-            <h2>My Goals</h2>
-            <p>I want to learn Game Development to create Games that I want.</p>
-        </div2>
-        <hr>
-
-        👉<button>Button button</button>
-
-        <hr> -->
+        navigator.clipboard.writeText(stopName).then(() => {
+            console.log('Copied:', stopName);
+        });
         
-        <!-- <hr>
-        <footer>
-            <p>
-                &copy;2025 My Website | All rights reserved</p>
-            </p>
-        </footer> -->
-    </body>
+        sessionStorage.setItem('selectedStop', stopName);
+        
+        window.location.assign(`/stops.html?stop=${encodeURIComponent(stopName)}`);
+    }
+});
 
-</html>
+
+
+
+
+
+// let stops = ["Shah Faisal Town", "Model Colony", "Malir Cant", "Malir Halt", "Chota Gate"];
+
+// let stopsList = document.getElementById("stopsList");
+// stopsList.innerHTML = stops.map(stop => `<li>${stop}<li>`).join('');
+
+
+// li?.forEach(element => {
+//     element.onclick = ()=>{ 
+//         window.location.assign("/new.html")
+        
+//     }
+// });
