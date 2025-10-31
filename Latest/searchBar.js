@@ -34,7 +34,7 @@ allLi.forEach(element => {
         
         sessionStorage.setItem('selectedStop', stopName);
         
-        window.location.assign(`/Latest/stops.html?stop=${encodeURIComponent(stopName)}`);
+        window.location.assign(`/stops.html?stop=${encodeURIComponent(stopName)}`);
     }
 });
 
@@ -56,3 +56,4 @@ allLi.forEach(element => {
 //     }
 
 // });
+
