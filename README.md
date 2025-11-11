@@ -1,4 +1,4 @@
 # ICT-Project-Bus-Transport-System
-*Must check previous version to understand newer*
+*Check Previous Version to Understand Newer Ones*
 
-*Must Discuss Changes Before Uploading*
+*Discuss Changes Before Uploading*
