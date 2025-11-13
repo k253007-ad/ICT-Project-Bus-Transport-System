@@ -1,4 +1,14 @@
-let stops = ["2K Stop", "Chota Gate", "Drigh Road", "Korangi Crossing", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town", "Sharfabad"];
+let stops = [
+    "2K Stop",
+    "Chota Gate",
+    "Drigh Road",
+    "Korangi Crossing",
+    "Malir Cant",
+    "Malir Halt",
+    "Model Colony",
+    "Shah Faisal Town",
+    "Sharfabad"
+];
 
 let stopsList = document.getElementById("stopsList");
 if (stopsList) {
@@ -38,7 +48,8 @@ const buses = [
 
 let stopSelected = "None";
 
-if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')){
+// ✅ Detect index.html (works for GitHub Pages)
+if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
 
     function filterList() {
         const input = document.getElementById('searchInput');
@@ -51,6 +62,13 @@ if (window.location.pathname.includes('index.html') || window.location.pathname.
         });
     }
 
+    // attach filterList to input (optional if already in HTML)
+    const input = document.getElementById('searchInput');
+    if (input) {
+        input.addEventListener('keyup', filterList);
+    }
+
+    // Make stops clickable
     const allLi = document.querySelectorAll("#stopsList li");
     allLi.forEach(element => {
         element.style.margin = '0';
@@ -60,11 +78,13 @@ if (window.location.pathname.includes('index.html') || window.location.pathname.
         element.onclick = () => {
             const stopName = element.textContent;
             sessionStorage.setItem('selectedStop', stopName);
+            // ✅ Use relative link (GitHub Pages safe)
             window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
         };
     });
 }
 
+// ✅ Detect stops.html (works for GitHub Pages)
 if (window.location.pathname.includes('stops.html')) {
     const stopNameElement = document.getElementById('stopName');
     const urlParams = new URLSearchParams(window.location.search);
@@ -93,7 +113,4 @@ if (window.location.pathname.includes('stops.html')) {
             `).join('')
             : `<li>No buses available for this stop</li>`;
     }
-
 }
-
-
