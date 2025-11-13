@@ -38,7 +38,7 @@ const buses = [
 
 let stopSelected = "None";
 
-if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+if (window.location.pathname === 'index.html' || window.location.pathname === '/') {
 
     function filterList() {
         const input = document.getElementById('searchInput');
@@ -65,7 +65,7 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
     });
 }
 
-if (window.location.pathname === '/stops.html') {
+if (window.location.pathname === 'stops.html') {
     const stopNameElement = document.getElementById('stopName');
     const urlParams = new URLSearchParams(window.location.search);
     const stopFromUrl = urlParams.get('stop');
@@ -95,3 +95,4 @@ if (window.location.pathname === '/stops.html') {
     }
 
 }
+
