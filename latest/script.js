@@ -38,7 +38,7 @@ const buses = [
 
 let stopSelected = "None";
 
-if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
+if (window.location.pathname === 'index.html' || window.location.pathname === '/') {
 
     function filterList() {
         const input = document.getElementById('searchInput');
@@ -60,12 +60,12 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
         element.onclick = () => {
             const stopName = element.textContent;
             sessionStorage.setItem('selectedStop', stopName);
-            window.location.assign(`/stops.html?stop=${encodeURIComponent(stopName)}`);
+            window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
         };
     });
 }
 
-if (window.location.pathname === '/stops.html') {
+if (window.location.pathname === 'stops.html') {
     const stopNameElement = document.getElementById('stopName');
     const urlParams = new URLSearchParams(window.location.search);
     const stopFromUrl = urlParams.get('stop');
@@ -94,3 +94,4 @@ if (window.location.pathname === '/stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
+
