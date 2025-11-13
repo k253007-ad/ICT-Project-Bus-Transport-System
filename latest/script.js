@@ -1,4 +1,4 @@
-let stops = ["2K Stop", "Chota Gate", "Drigh Road", "Korangi Crossing", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town", "Sharfabad"];
+let stops = ["2K Stop", "Chota Gate", "Colony Gate", "Drigh Road", "Korangi Crossing", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town", "Sharfabad"];
 
 let stopsList = document.getElementById("stopsList");
 if (stopsList) {
@@ -95,3 +95,4 @@ if (window.location.pathname === '/stops.html') {
     }
 
 }
+
