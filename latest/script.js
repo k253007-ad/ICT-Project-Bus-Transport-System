@@ -1,4 +1,4 @@
-let stops = ["2K Stop", "Chota Gate", "Colony Gate", "Drigh Road", "Korangi Crossing", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town", "Sharfabad"];
+let stops = ["2K Stop", "Chota Gate", "Drigh Road", "Korangi Crossing", "Malir Cant", "Malir Halt", "Model Colony", "Shah Faisal Town", "Sharfabad"];
 
 let stopsList = document.getElementById("stopsList");
 if (stopsList) {
@@ -36,11 +36,10 @@ const buses = [
     }
 ];
 
-// Get current page filename (works on any hosting)
-const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-const isHomePage = currentPage === 'index.html' || currentPage === '';
+let stopSelected = "None";
 
-if (isHomePage) {
+if (window.location.pathname === 'index.html' || window.location.pathname === '/') {
+
     function filterList() {
         const input = document.getElementById('searchInput');
         const filter = input.value.toLowerCase();
@@ -61,14 +60,12 @@ if (isHomePage) {
         element.onclick = () => {
             const stopName = element.textContent;
             sessionStorage.setItem('selectedStop', stopName);
-            // Use relative path for redirect
-            window.location.href = `stops.html?stop=${encodeURIComponent(stopName)}`;
+            window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
         };
     });
 }
 
-// Check if we're on the stops page
-if (currentPage === 'stops.html') {
+if (window.location.pathname === 'stops.html') {
     const stopNameElement = document.getElementById('stopName');
     const urlParams = new URLSearchParams(window.location.search);
     const stopFromUrl = urlParams.get('stop');
@@ -97,4 +94,3 @@ if (currentPage === 'stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
-
