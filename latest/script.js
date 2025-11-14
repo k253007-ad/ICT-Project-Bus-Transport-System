@@ -61,6 +61,7 @@ if (window.location.pathname === '/index.html' || window.location.pathname === '
             const stopName = element.textContent;
             sessionStorage.setItem('selectedStop', stopName);
             window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
+            console.log("The Button Clicked!");
         };
     });
 }
@@ -94,4 +95,5 @@ if (window.location.pathname === '/stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
+
 
