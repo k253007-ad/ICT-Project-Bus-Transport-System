@@ -38,19 +38,19 @@ const buses = [
 
 let stopSelected = "None";
 
+function filterList() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const li = document.querySelectorAll("#stopsList li");
+
+    li.forEach(item => {
+        const textValue = item.textContent || item.innerText;
+        item.style.display = textValue.toLowerCase().includes(filter) ? '' : 'none';
+    });
+}
+
 if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
-
-    function filterList() {
-        const input = document.getElementById('searchInput');
-        const filter = input.value.toLowerCase();
-        const li = document.querySelectorAll("#stopsList li");
-
-        li.forEach(item => {
-            const textValue = item.textContent || item.innerText;
-            item.style.display = textValue.toLowerCase().includes(filter) ? '' : 'none';
-        });
-    }
-
+    
     const allLi = document.querySelectorAll("#stopsList li");
     allLi.forEach(element => {
         element.style.margin = '0';
@@ -95,5 +95,6 @@ if (window.location.pathname === '/stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
+
 
 
