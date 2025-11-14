@@ -51,18 +51,22 @@ function filterList() {
 
 if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
     
-    const allLi = document.querySelectorAll("#stopsList li");
-    allLi.forEach(element => {
-        element.style.margin = '0';
-        element.style.padding = '10px';
-        element.style.cursor = 'pointer';
-
-        element.onclick = () => {
-            const stopName = element.textContent;
-            sessionStorage.setItem('selectedStop', stopName);
-            window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
-            console.log("The Button Clicked!");
-        };
+    document.addEventListener('DOMContentLoaded', function() {
+        if (document.getElementById('searchInput')) {
+            const allLi = document.querySelectorAll("#stopsList li");
+            allLi.forEach(element => {
+                element.style.margin = '0';
+                element.style.padding = '10px';
+                element.style.cursor = 'pointer';
+    
+                element.onclick = () => {
+                    const stopName = element.textContent;
+                    sessionStorage.setItem('selectedStop', stopName);
+                    console.log("Navigating to:", stopName);
+                    window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
+                };
+            });
+        }
     });
 }
 
@@ -95,6 +99,7 @@ if (window.location.pathname === '/stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
+
 
 
 
