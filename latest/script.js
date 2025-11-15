@@ -38,39 +38,36 @@ const buses = [
 
 let stopSelected = "None";
 
-function filterList() {
-    const input = document.getElementById('searchInput');
-    const filter = input.value.toLowerCase();
-    const li = document.querySelectorAll("#stopsList li");
+const pathname = window.location.pathname;
+const isIndexPage = pathname.endsWith('/index.html') || pathname.endsWith('/') \\ pathname.split('/').pop() === '';
 
-    li.forEach(item => {
-        const textValue = item.textContent || item.innerText;
-        item.style.display = textValue.toLowerCase().includes(filter) ? '' : 'none';
+if (isIndexPage) {
+
+    function filterList() {
+        const input = document.getElementById('searchInput');
+        const filter = input.value.toLowerCase();
+        const li = document.querySelectorAll("#stopsList li");
+
+        li.forEach(item => {
+            const textValue = item.textContent || item.innerText;
+            item.style.display = textValue.toLowerCase().includes(filter) ? '' : 'none';
+        });
+    }
+
+    const allLi = document.querySelectorAll("#stopsList li");
+    allLi.forEach(element => {
+        element.style.margin = '0';
+        element.style.padding = '10px';
+        element.style.cursor = 'pointer';
+
+        element.onclick = () => {
+            const stopName = element.textContent;
+            sessionStorage.setItem('selectedStop', stopName);
+            window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
+        };
     });
 }
-
-if (window.location.pathname === '/index.html' || window.location.pathname === '/') {
-    
-    document.addEventListener('DOMContentLoaded', function() {
-        if (document.getElementById('searchInput')) {
-            const allLi = document.querySelectorAll("#stopsList li");
-            allLi.forEach(element => {
-                element.style.margin = '0';
-                element.style.padding = '10px';
-                element.style.cursor = 'pointer';
-    
-                element.onclick = () => {
-                    const stopName = element.textContent;
-                    sessionStorage.setItem('selectedStop', stopName);
-                    console.log("Navigating to:", stopName);
-                    window.location.assign(`stops.html?stop=${encodeURIComponent(stopName)}`);
-                };
-            });
-        }
-    });
-}
-
-if (window.location.pathname === '/stops.html') {
+if (pathname.endswith('/stops.html') || pathname.includes('stops.html') {
     const stopNameElement = document.getElementById('stopName');
     const urlParams = new URLSearchParams(window.location.search);
     const stopFromUrl = urlParams.get('stop');
@@ -99,6 +96,7 @@ if (window.location.pathname === '/stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
+
 
 
 
