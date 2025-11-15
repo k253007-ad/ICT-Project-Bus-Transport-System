@@ -28,8 +28,8 @@ Works on all modern browsers and mobile devices.
 
 ## License
 
-Main Developer : Adnan Ahmed 25k-3007
-Data Manager   : Shehrayar Zafar
-CSS Designer   : Muhammad Zeeshan
+- Main Developer : Adnan Ahmed 25k-3007
+- Data Manager   : Shehrayar Zafar
+- CSS Designer   : Muhammad Zeeshan
 
 
