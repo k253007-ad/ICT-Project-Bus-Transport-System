@@ -19,8 +19,8 @@ A clean, simple, and functional bus registeration system. Built with HTML, CSS, 
 **4 Buses:**
 - Bus 1-B (5 stops)
 - Bus 29 (4 stops)
-- Bus 5 (4 stops)
 - Bus 4 (3 stops)
+- Bus 5 (4 stops)
 
 ## Browser Support
 
