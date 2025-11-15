@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+    <link rel="stylesheet" href="busDetailsStyle.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Bus Route Details</h1>
+        
+        <div class="bus-header">
+            <p>Bus Number:</p>
+            <div class="bus-name" id="busName">Loading...</div>
+        </div>
+        
+        <div class="bus-stats">
+            <div class="stat-item">
+                <strong>Total Stops:</strong> <span id="totalStops">-</span>
+            </div>
+            <div class="stat-item">
+                <strong>Filled Seats:</strong> <span id="filledSeats">-</span>
+            </div>
+            <div class="stat-item">
+                <strong>Available Seats:</strong> <span id="availableSeats">-</span>
+            </div>
+            <div class="stat-item">
+                <strong>Capacity:</strong> <span id="capacityPercent">-</span>
+            </div>
+        </div>
+        
+        <div class="capacity-section">
+            <h3>Current Capacity</h3>
+            <div class="capacity-bar-large">
+                <div class="capacity-fill-large" id="capacityFill"></div>
+            </div>
+            <div class="capacity-text" id="capacityText">0%</div>
+        </div>
+        
+        <div class="route-section">
+            <h2>Complete Route</h2>
+            <div id="routeMap" class="route-map">
+                <p>Loading route...</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>Additional Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Operating Hours:</strong>
+                    <p>6:00 AM - 11:00 PM</p>
+                </div>
+                <div class="info-item">
+                    <strong>Frequency:</strong>
+                    <p>Every 10-15 minutes</p>
+                </div>
+                <div class="info-item">
+                    <strong>Fare:</strong>
+                    <p>Rs. 30 - Rs. 50</p>
+                </div>
+            </div>
+        </div>
+        
+        <button onclick="history.back()">Go Back</button>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
