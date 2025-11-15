@@ -116,38 +116,15 @@ if (getCurrentPage() === 'stops.html') {
         
         if (filteredBuses.length > 0) {
             busesList.innerHTML = filteredBuses.map(bus => {
-                const capacityPercent = Math.round((bus.filledSeats / bus.totalSeats) * 100);
-                let capacityClass = 'low';
-                let badgeClass = 'badge-low';
-                let badgeText = 'Available';
-                let itemClass = 'low-capacity';
+
+                let itemClass = 'busInfo';
                 
-                if (capacityPercent >= 90) {
-                    capacityClass = 'high';
-                    badgeClass = 'badge-high';
-                    badgeText = 'Almost Full';
-                    itemClass = 'high-capacity';
-                } else if (capacityPercent >= 70) {
-                    capacityClass = 'medium';
-                    badgeClass = 'badge-medium';
-                    badgeText = 'Filling Up';
-                    itemClass = 'medium-capacity';
-                }
 
                 return `
                     <li class="${itemClass}" onclick="viewBusDetails(${bus.id})">
-                        <div class="bus-item">
-                            <div>
-                                <div class="bus-name">Bus ${bus.name}</div>
-                                <div class="bus-seats">${bus.filledSeats}/${bus.totalSeats} seats filled 
-                                    <span class="capacity-badge ${badgeClass}">${badgeText}</span>
-                                </div>
-                                <div class="capacity-info">
-                                    <div class="capacity-bar">
-                                        <div class="capacity-fill capacity-${capacityClass}" style="width: ${capacityPercent}%"></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="bus-name">Bus ${bus.name}</div>
+                        <div class="bus-seats"> 
+                            ${bus.filledSeats}/${bus.totalSeats} seats filled 
                         </div>
                     </li>
                 `;
@@ -155,18 +132,11 @@ if (getCurrentPage() === 'stops.html') {
 
             // Update stats
             const totalBusesEl = document.getElementById('totalBuses');
-            const avgCapacityEl = document.getElementById('avgCapacity');
             
             if (totalBusesEl) {
                 totalBusesEl.textContent = filteredBuses.length;
             }
             
-            if (avgCapacityEl) {
-                const avgCapacity = Math.round(
-                    filteredBuses.reduce((sum, bus) => sum + (bus.filledSeats / bus.totalSeats * 100), 0) / filteredBuses.length
-                );
-                avgCapacityEl.textContent = avgCapacity + '%';
-            }
         } else {
             busesList.innerHTML = '<li style="text-align: center; color: #999;">No buses available for this stop</li>';
         }
@@ -203,65 +173,22 @@ if (getCurrentPage() === 'busDetails.html') {
         const totalStopsEl = document.getElementById('totalStops');
         const filledSeatsEl = document.getElementById('filledSeats');
         const availableSeatsEl = document.getElementById('availableSeats');
-        const capacityPercentEl = document.getElementById('capacityPercent');
 
         if (totalStopsEl) totalStopsEl.textContent = selectedBus.stops.length;
         if (filledSeatsEl) filledSeatsEl.textContent = selectedBus.filledSeats;
         if (availableSeatsEl) availableSeatsEl.textContent = selectedBus.totalSeats - selectedBus.filledSeats;
         
-        const capacityPercent = Math.round((selectedBus.filledSeats / selectedBus.totalSeats) * 100);
-        if (capacityPercentEl) capacityPercentEl.textContent = capacityPercent + '%';
-
-        // Update capacity bar
-        const capacityFillEl = document.getElementById('capacityFill');
-        const capacityTextEl = document.getElementById('capacityText');
-        
-        if (capacityFillEl && capacityTextEl) {
-            setTimeout(() => {
-                capacityFillEl.style.width = capacityPercent + '%';
-                capacityTextEl.textContent = capacityPercent + '%';
-                
-                // Change color based on capacity
-                if (capacityPercent >= 90) {
-                    capacityFillEl.classList.add('high');
-                } else if (capacityPercent >= 70) {
-                    capacityFillEl.classList.add('medium');
-                }
-            }, 300);
-        }
-
         // Create route map
         const routeMapEl = document.getElementById('routeMap');
         if (routeMapEl) {
             const routeHTML = selectedBus.stops.map((stop, index) => {
-                const isFirstStop = index === 0;
-                const isLastStop = index === selectedBus.stops.length - 1;
-                const isCurrentStop = stop === fromStop;
-                
-                let dotClass = 'stop-dot';
-                if (isFirstStop) dotClass += ' first-stop';
-                if (isLastStop) dotClass += ' last-stop';
-                if (isCurrentStop) dotClass += ' current-stop';
 
-                const estimatedTime = index * 5; // 5 minutes between stops
-                
                 return `
                     <div class="route-stop">
-                        <div class="stop-marker">
-                            <div class="${dotClass}"></div>
-                            ${!isLastStop ? '<div class="stop-line"></div>' : ''}
-                        </div>
                         <div class="stop-details">
                             <span class="stop-number">Stop ${index + 1}</span>
                             <div class="stop-name-text">
                                 ${stop}
-                                ${isCurrentStop ? ' ⭐' : ''}
-                            </div>
-                            <div class="stop-time">
-                                ${estimatedTime} min
-                                ${isFirstStop ? ' (Start)' : ''}
-                                ${isLastStop ? ' (End)' : ''}
-                                ${isCurrentStop ? ' (Your Stop)' : ''}
                             </div>
                         </div>
                     </div>

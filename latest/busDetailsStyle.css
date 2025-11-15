@@ -268,29 +268,3 @@ button:hover {
     background: #1565c0;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    body {
-        padding: 10px;
-    }
-    
-    .container {
-        padding: 20px;
-    }
-    
-    .bus-name {
-        font-size: 24px;
-    }
-    
-    .bus-stats {
-        grid-template-columns: 1fr 1fr;
-    }
-    
-    .route-stop {
-        gap: 10px;
-    }
-    
-    .info-grid {
-        grid-template-columns: 1fr;
-    }
-}
