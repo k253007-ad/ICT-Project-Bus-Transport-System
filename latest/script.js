@@ -38,8 +38,9 @@ const buses = [
 
 let stopSelected = "None";
 
+// Check if we're on the index page
 const pathname = window.location.pathname;
-const isIndexPage = pathname.endsWith('/index.html') || pathname.endsWith('/') \\ pathname.split('/').pop() === '';
+const isIndexPage = pathname.endsWith('/index.html') || pathname.endsWith('/') || pathname.split('/').pop() === '';
 
 if (isIndexPage) {
 
@@ -67,7 +68,9 @@ if (isIndexPage) {
         };
     });
 }
-if (pathname.endswith('/stops.html') || pathname.includes('stops.html') {
+
+// Check if we're on the stops page
+if (pathname.endsWith('/stops.html') || pathname.includes('stops.html')) {
     const stopNameElement = document.getElementById('stopName');
     const urlParams = new URLSearchParams(window.location.search);
     const stopFromUrl = urlParams.get('stop');
@@ -96,8 +99,3 @@ if (pathname.endswith('/stops.html') || pathname.includes('stops.html') {
             : `<li>No buses available for this stop</li>`;
     }
 }
-
-
-
-
-
