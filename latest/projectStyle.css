@@ -21,9 +21,10 @@ body {
     width: 100vw;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-start;
     flex-direction: column;
     padding: 20px;
+    padding-bottom: 70px;
 }
 
 .content {
@@ -33,28 +34,26 @@ body {
     gap: 1rem;
     text-align: center;
     animation: fadeIn 0.6s ease-in;
+    
 }
 
 .content h1 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    background-color: lightblue;
 }
 
 .content p {
-    color: #555;
+    color: black;
     font-size: 1.1rem;
-}
+    background-color: rgba(173, 216, 230, 0.8); 
+    padding: 10px;
+    border-radius: 8px;
 
-.content hr {
-    border: none;
-    border-top: 2px solid #ddd;
-    margin: 1rem auto;
-    width: 80%;
 }
 
 h1 {
     text-align: center;
-    background-color: lightblue;
     padding: 1rem;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
@@ -65,12 +64,13 @@ h2 {
     color: #1976d2;
     font-size: 1.5rem;
     font-weight: 600;
+    background-color: rgb(255,255,255, 0.5);
 }
 
 .container {
     width: 100%;
     max-width: 550px;
-    background-color: #fff;
+    background-color: rgb(117, 163, 179, 0.5);
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
@@ -186,8 +186,16 @@ footer {
     background: linear-gradient(135deg, lightblue 0%, #b3e5fc 100%);
     width: 100vw;
     text-align: center;
-    margin-top: auto;
+    position: fixed;
+    bottom: 0;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
     font-size: 14px;
     color: #333;
+    border-radius: 12px;
+}
+
+
+body {
+  background-image: url("background.png");
+  background-size: 150%;
 }
