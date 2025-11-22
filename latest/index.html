@@ -5,25 +5,68 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bus Transport System</title>
-    <link rel="stylesheet" href="projectStyle.css">
+    <link rel="stylesheet" href="indexStyle.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
 </head>
 
-<body>
-    <div class="wrapper">
-        <div class="content">  
-            <h1><b>Bus Transport System</b></h1>
-            <p><em>(Our Goal is to Make Transport System Easy)</em></p>
+
+<body>  
+    <header>
+    <nav class="navbar">
+        <div class="logo">
+          <h1>ZEE <span>TRANSPORT</span></h1>
         </div>
-        
-        <div class="container">
-            <h1 style="background-color: lightblue;">Bus-Stop Search</h1>
-            <input type="text" id="searchInput" placeholder="Search for your stops...." onkeyup="filterList()">
-            <div class="stops-count" id="stopsCount">9 stops available</div>
-            <ul id="stopsList"></ul>
+        <div class="navlinks">
+            <div class="link"><a href="index.html">HOME</a></div>
+            <div class="link"><a href="about.html">ABOUT</a></div>
+            <div class="link"><a href="contact.html">CONTACT</a></div>
+            <div class="link"><a href="more.html">MORE</a></div>
         </div>
-        
-        <footer>&copy; 2025 Bus Transport System | All rights reserved</footer>
-    </div>
+        <div class="navbtn">
+            <button class="navbtnx">
+                LOGIN
+            </button>
+            <button class="navbtnx">
+                SIGNUP
+            </button>
+        </div>
+    </nav>
+</header>
+
+    <main>
+        <div class="lecture">
+            <div>
+                <p class="welcomepara">
+                Your Journey, Our Priority
+                </p>
+            </div>
+            <div>
+                <h2>Welcome to <span class="paralogo">ZEE</span> Transport System</h2>
+            </div>
+            <div>
+                <p>
+                    With our modern fleet, professional drivers, and flexible <br> booking options,
+                    <span class="paralogo">ZEE</span> makes every journey smooth, safe, and enjoyable.
+                </p>
+            </div>
+          <div>
+            <a href="search.html">
+                <button class="btnreg">
+                    STOP SEARCH
+                </button>
+            </a>
+          </div>
+
+        </div>
+
+    </main>
+
+
+        <footer>
+            &copy; 2025 Bus Transport System | All rights reserved
+        </footer>
 
     <script src="script.js"></script>
 </body>
