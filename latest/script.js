@@ -1,3 +1,10 @@
+function showPage(id) {
+    document.querySelectorAll('section').forEach(sec => {
+    sec.classList.remove('active');
+    });
+    document.getElementById(id).classList.add('active');
+}
+
 // Bus stops data
 let stops = [
   "Ala Din Park",
@@ -355,3 +362,34 @@ if (getCurrentPage() === 'busDetails.html') {
         }
     }
 }
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector("form");
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    const Fname = document.getElementById("Fname").value.trim();
+    const NUID = document.getElementById("NU ID").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const contact = document.getElementById("contact").value.trim();
+    const dob = document.getElementById("dob").value;
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
+    if (!Fname || !NUID || !email || !contact || !dob) {
+      alert("Please fill out all required fields.");
+      return;
+    }
+    if (password !== confirmPassword) {
+      alert("Passwords do not match.");
+      return;
+    }
+    alert("Form submitted successfully!");
+    form.submit();
+  });
+  const resetBtn = document.querySelector("button[type='reset']");
+  resetBtn.addEventListener("click", function (e) {
+    const confirmReset = confirm("Are you sure you want to reset the form?");
+    if (!confirmReset) {
+      e.preventDefault();
+    }
+  });
+});
+

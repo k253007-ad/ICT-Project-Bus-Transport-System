@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Reg. Form</title>
+    <link rel="javascript" href="script.js" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+        font-family: poppins, sans-serif;
+        background-image: url(bus1.avif);
+      }
+
+      header {
+        text-align: center;
+        color: white;
+        font-size: 2.5rem;
+        padding: 20px 0;
+      }
+      .navbar {
+        backdrop-filter: blur(4px);
+        background-color: #1976d2;
+        width: 600px;
+        margin: 0 auto;
+        border-radius: 15px;
+        padding: 10px 0;
+        text-shadow: black 0.1em 0.1em 0.2em;
+      }
+
+      main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+      }
+
+      .container {
+        color:#00e1ff;
+        padding: 30px;
+        border-radius: 15px;
+        width: 400px;
+        backdrop-filter: blur(4px);
+        background: rgba(0, 0, 0, 0.3);
+      }
+
+      .form-group {
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+      }
+
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="date"],
+      input[type="password"],
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+      }
+
+      .form-group.inline {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .form-group.inline label {
+        margin: 0;
+        font-weight: normal;
+      }
+
+      .RSbutton {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+      }
+
+      button {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 5px;
+        background-color: #1976d2;
+        color: white;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1565c0;
+        transform: scale(1.1);
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">BUS Registration Form</nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="Fname">Full Name</label>
+            <input type="text" id="Fname" placeholder="Full Name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="NU ID">NU ID</label>
+            <input type="text" id="NU ID" placeholder="NU ID" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Contact</label>
+            <input type="tel" id="contact" placeholder="Contact" required />
+          </div>
+
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" required />
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="form-group inline">
+              <input type="radio" name="gender" id="male" required />
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="female" />
+              <label for="female">Female</label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input type="text" id="address" placeholder="Address" required />
+          </div>
+
+          <div class="form-group">
+            <label for="imageUpload">Profile Picture</label>
+            <input
+              type="file"
+              id="imageUpload"
+              name="image"
+              accept="image/*"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              id="password"
+              placeholder="Password"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              placeholder="Confirm Password"
+              required
+            />
+          </div>
+
+          <div class="RSbutton">
+            <button type="reset">Reset</button>
+            <button type="submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
