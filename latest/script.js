@@ -1,22 +1,22 @@
 // Bus stops data
 let stops = [
-  "2K Stop",
   "Ala Din Park",
-  "Askari - II & III",
-  "Askari - IV",
+  "Askari – II & III",
+  "Askari – IV",
   "Aziz Bhatti Park",
   "Bahadurabad",
   "Bait-Ul-Mukarram",
+  "CMH",
   "Cant Station",
   "Cantt. Bazaar",
-  "Chota Gate",
-  "CMH",
   "Colony Gate",
+  "Dalmia",
   "Dhoraji",
   "Drig Road",
+  "Esa Nagri",
+  "FTC",
   "Falcon",
   "Forum Shopping Mall",
-  "FTC",
   "Gizri",
   "Guro Mandir",
   "Hassan Square",
@@ -24,28 +24,36 @@ let stops = [
   "Hyper Star",
   "Iqra University",
   "Islamiaya College",
+  "Jail Road",
+  "Jamshed Road",
   "Johar More",
+  "KPT Bridge",
   "Karsaz Pankha Stop",
+  "Kashmir Road",
   "Kh. Bukhari",
   "Kh. Ittehad",
   "Kh. Mujahid",
+  "Khalid Bin WaleedRoad",
+  "Khudadad Colony",
   "Korangi Crossing",
   "Korangi No. 2",
   "Korangi No. 5",
-  "KPT Bridge",
   "Lal Flat",
   "Landhi 89",
   "Landhi No. 4",
   "Liaquat 10. No.",
   "M. Ali Society",
-  "Malir Cantt",
+  "Malir 15",
+  "Malir Cantt Askari-V",
   "Malir Cantt Phase-I",
   "Malir Halt",
   "Manzoor Colony",
+  "Mashriq Centre",
   "Matka Stop",
+  "Millennium",
   "Mumtaz Manzil",
-  "Nasir Jump",
   "NMC",
+  "Nasir Jump",
   "PAF Chapter",
   "Perfume Chowk Johar",
   "Phase – IV",
@@ -53,70 +61,97 @@ let stops = [
   "Saba Avenue",
   "Sector - G",
   "Sector - J",
-  "Shah Faisal Town",
   "Sharfabad",
+  "Sir Syed Road",
   "Soldier Bazar",
+  "Stadium",
   "Stadium Road",
   "Star Gate",
+  "Tariq Road",
   "Teen Talwar",
+  "Tipu Sultan Road",
   "Urdu Science College",
   "Usman Memmoiral",
   "ZamZama",
   "Zubaida Hospital"
 ];
+
 // Buses data with enhanced information
 const buses = [
     {
         id: 1,
+        name: "1",
+        stops: ["Malir Cantt Phase-I", "Malir Cantt Askari-V"],
+        filledSeats: 30,
+        totalSeats: 50
+    },
+    {
+        id: 2,
         name: "1-B",
         stops: ["Malir Cantt Phase-I", "Sector - G", "Sector - J", "Falcon", "CMH", "Cantt. Bazaar"],
         filledSeats: 35,
         totalSeats: 50
     },
+    
     {
-        id: 2,
+        id: 3,
         name: "11",
         stops: ["Soldier Bazar", "Guro Mandir", "Islamiaya College", "Stadium Road"],
         filledSeats: 42,
         totalSeats: 50
     },
     {
-        id: 3,
+        id: 4,
+        name: "12",
+        stops: ["Jail Road", "Jamshed Road", "Khudadad Colony", "Kashmir Road", "Sir Syed Road", "Khalid Bin WaleedRoad", "Tariq Road", "Tipu Sultan Road"],
+        filledSeats: 39,
+        totalSeats: 50
+    },
+    {
+        id: 5,
+        name: "13",
+        stops: ["Esa Nagri", "Mashriq Centre", "Stadium", "Dalmia", "Millennium", "Malir Halt", "Malir 15"],
+        filledSeats: 44,
+        totalSeats: 50
+    },
+    {
+        id: 6,
         name: "14",
         stops: ["Sharfabad", "Bahadurabad", "Dhoraji", "M. Ali Society", "Karsaz Pankha Stop"],
         filledSeats: 28,
         totalSeats: 45
     },
+    
     {
-        id: 4,
+        id: 7,
         name: "15",
         stops: ["Forum Shopping Mall", "ZamZama", "Gizri", "Phase – IV"],
         filledSeats: 45,
         totalSeats: 50
     },
     {
-        id: 5,
+        id: 8,
         name: "16",
         stops: ["Hyper Star", "Kh. Mujahid", "Saba Avenue", "Kh. Bukhari", "Kh. Ittehad"],
         filledSeats: 40,
         totalSeats: 50
     },
     {
-        id: 6,
+        id: 9,
         name: "19",
         stops: ["Hassan Square", "Mumtaz Manzil", "Bait-Ul-Mukarram", "Urdu Science College", "Aziz Bhatti Park"],
         filledSeats: 42,
         totalSeats: 50
     },
     {
-        id: 7,
+        id: 10,
         name: "31",
         stops: ["KPT Bridge", "Iqra University", "Manzoor Colony", "PAF Chapter"],
         filledSeats: 44,
         totalSeats: 50
     },
     {
-        id: 8,
+        id: 11,
         name: "33",
         stops: ["Liaquat 10. No.", "Usman Memmoiral", "Dhoraji", "Zubaida Hospital", "M. Ali Society"],
         filledSeats: 45,
@@ -124,28 +159,28 @@ const buses = [
         
     },
     {
-        id: 9,
+        id: 12,
         name: "34",
         stops: ["Korangi Crossing", "Nasir Jump", "Korangi No. 2", "Korangi No. 5", "Landhi No. 4", "Landhi 89"],
         filledSeats: 39,
         totalSeats: 50
     },
     {
-        id: 10,
+        id: 13,
         name: "35",
         stops: ["Teen Talwar", "Race Course", "Cant Station", "Askari – II & III", "NMC", "FTC"],
         filledSeats: 37,
         totalSeats: 50
     },
     {
-        id: 11,
+        id: 14,
         name: "39",
         stops: ["Perfume Chowk Johar", "Hilltop", "Johar More", "Drig Road", "Colony Gate", "Star Gate"],
         filledSeats: 35,
         totalSeats: 50
     },
     {
-       id: 11,
+        id: 15,
         name: "40",
         stops: ["Matka Stop", "Ala Din Park", "Lal Flat", "Askari – IV"],
         filledSeats: 32,
@@ -153,18 +188,21 @@ const buses = [
     },
 ];
 
-// Helper function to get current page 
+// Helper function to get current page (works with GitHub Pages)
 function getCurrentPage() {
     const path = window.location.pathname;
     const page = path.substring(path.lastIndexOf('/') + 1);
     return page || 'search.html';
 }
 
+// ========== SEARCH BAR PAGE FUNCTIONALITY ==========
 if (getCurrentPage() === 'search.html' || getCurrentPage() === '') {
+    // Populate stops list
     const stopsList = document.getElementById("stopsList");
     if (stopsList) {
         stopsList.innerHTML = stops.map(stop => `<li>${stop}</li>`).join('');
 
+        // Add click handlers to all stop items
         const allLi = document.querySelectorAll("#stopsList li");
         allLi.forEach(element => {
             element.onclick = () => {
