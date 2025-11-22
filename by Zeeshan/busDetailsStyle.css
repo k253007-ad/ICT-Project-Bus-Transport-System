@@ -1,0 +1,270 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+h2 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #1976d2;
+    padding-bottom: 10px;
+}
+
+h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+/* Bus Header */
+.bus-header {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.bus-name {
+    font-size: 32px;
+    color: #1976d2;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+/* Bus Stats */
+.bus-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    background: #f5f5f5;
+    padding: 15px;
+    border-radius: 5px;
+    text-align: center;
+    border-left: 4px solid #3498db;
+}
+
+.stat-item strong {
+    display: block;
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 5px;
+}
+
+.stat-item span {
+    color: #1976d2;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Capacity Section */
+.capacity-section {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.capacity-bar-large {
+    width: 100%;
+    height: 30px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    overflow: hidden;
+    margin: 15px 0;
+}
+
+.capacity-fill-large {
+    height: 100%;
+    background-color: #4caf50;
+    transition: width 1s ease, background-color 0.5s ease;
+}
+
+.capacity-fill-large.medium {
+    background-color: #ff9800;
+}
+
+.capacity-fill-large.high {
+    background-color: #f44336;
+}
+
+.capacity-text {
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Route Section */
+.route-section {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.route-map {
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 8px;
+}
+
+.route-stop {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.route-stop:last-child {
+    margin-bottom: 0;
+}
+
+.stop-marker {
+    flex-shrink: 0;
+    width: 30px;
+    text-align: center;
+    position: relative;
+}
+
+.stop-dot {
+    width: 16px;
+    height: 16px;
+    background: #3498db;
+    border: 3px solid white;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 0 2px #3498db;
+}
+
+.stop-dot.first-stop {
+    background: #4caf50;
+    box-shadow: 0 0 0 2px #4caf50;
+}
+
+.stop-dot.last-stop {
+    background: #f44336;
+    box-shadow: 0 0 0 2px #f44336;
+}
+
+.stop-dot.current-stop {
+    background: #ff9800;
+    box-shadow: 0 0 0 2px #ff9800;
+}
+
+.stop-line {
+    position: absolute;
+    left: 50%;
+    top: 22px;
+    width: 2px;
+    height: calc(100% + 20px);
+    background: #ddd;
+    transform: translateX(-50%);
+}
+
+.route-stop:last-child .stop-line {
+    display: none;
+}
+
+.stop-details {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+    border-left: 3px solid #3498db;
+}
+
+.stop-number {
+    display: inline-block;
+    background: #1976d2;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 3px;
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.stop-name-text {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.stop-time {
+    color: #666;
+    font-size: 0.9em;
+}
+
+/* Info Section */
+.info-section {
+    background: #e3f2fd;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.info-item {
+    background: white;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.info-item strong {
+    display: block;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.info-item p {
+    color: #666;
+    margin: 0;
+}
+
+/* Button */
+button {
+    background: #1976d2;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background: #1565c0;
+}
+
