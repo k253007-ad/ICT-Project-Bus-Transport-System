@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Stops |</title>
+     <link rel="javascript" href="script.js" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="searchStyle.css">
+</head>
+
+<body>
+    <div class="wrapper">
+
+        <div class="container">
+            <h1 class="heading1"><b>Bus Stop Search</b></h1>
+            <input type="text" id="searchInput" placeholder="Search for your stops...." onkeyup="filterList()">
+            <div class="stops-count" id="stopsCount">59 stops available</div>
+            <ul id="stopsList"></ul>
+        </div >
+        <div class="gobackbtn">
+            
+            <button onclick="history.back()" class="gobackbtn1">GO BACK</button>
+
+        </div>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
