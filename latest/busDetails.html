@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Details</title>
+     <link rel="javascript" href="script.js" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet"
+    />
+     <link rel="javascript" href="script.js" />
+    <link rel="stylesheet" href="busDetailsStyle.css">
+</head>
+
+<body>
+
+    <header class="headerr">
+            <h1>Bus Route Details</h1>
+    </header>
+    <div class="container">
+        
+        
+        <div class="bus-header">
+            <p>Bus Number:</p>
+            <div class="bus-name" id="busName">Loading...</div>
+        </div>
+        
+        <div class="bus-stats">
+            <div class="stat-item">
+                <strong>Total Stops:</strong> <span id="totalStops">-</span>
+            </div>
+            <div class="stat-item">
+                <strong>Filled Seats:</strong> <span id="filledSeats">-</span>
+            </div>
+            <div class="stat-item">
+                <strong>Available Seats:</strong> <span id="availableSeats">-</span>
+            </div>
+        </div>
+        
+        <div class="route-section">
+            <h2>Complete Route</h2>
+            <div id="routeMap" class="route-map">
+                <p>Loading route...</p>
+            </div>
+        </div>
+        
+        <div class="info-section">
+            <h3>Additional Information</h3>
+            <div class="info-grid">
+                <div class="info-item">
+                    <strong>Use Bus Tracking Website:</strong>
+                    <p>Each bus has tracking system</p>
+                </div>
+                <div class="info-item">
+                    <strong>Be On Time:</strong>
+                    <p>The bus wont wait for you</p>
+                </div>
+                <div class="info-item">
+                    <strong>Caution:</strong>
+                    <p>Must check before registering</p>
+                </div>
+            </div>
+        </div>
+        <div class="gobackbtn">
+            <button class="gobackbtn1" onclick="history.back()">GO BACK</button>
+        </div>
+        
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+
+</html>
