@@ -13,8 +13,8 @@ A clean, simple, and functional bus registeration system. Built with HTML, CSS, 
 
 ## Current Data
 
-**9 Bus Stops:**
-2K Stop, Chota Gate, Drigh Road, Korangi Crossing, Malir Cant, Malir Halt, Model Colony, Shah Faisal Town, Sharfabad
+**59 Bus Stops:**
+"Ala Din Park", "Askari – II & III", "Askari – IV", "Aziz Bhatti Park", "Bahadurabad", "Bait-Ul-Mukarram", "CMH","Cant Station", "Cantt. Bazaar", "Colony Gate", "Dalmia", "Dhoraji", "Drig Road", "Esa Nagri", "FTC","Falcon", "Forum Shopping Mall", "Gizri", "Guro Mandir", "Hassan Square", "Hilltop", "Hyper Star", "Iqra University", "Islamiaya College", "Jail Road", "Jamshed Road", "Johar More", "KPT Bridge", "Karsaz Pankha Stop", "Kashmir Road", "Kh. Bukhari", "Kh. Ittehad", "Kh. Mujahid", "Khalid Bin WaleedRoad", "Khudadad Colony", "Korangi Crossing", "Korangi No. 2", "Korangi No. 5", "Lal Flat", "Landhi 89", "Landhi No. 4", "Liaquat 10. No.", "M. Ali Society", "Malir 15", "Malir Cantt Askari-V", "Malir Cantt Phase-I", "Malir Halt", "Manzoor Colony", "Mashriq Centre", "Matka Stop", "Millennium", "Mumtaz Manzil", "NMC","Nasir Jump", "PAF Chapter", "Perfume Chowk Johar", "Phase – IV", "Race Course", "Saba Avenue", "Sector - G", "Sector - J", "Sharfabad", "Sir Syed Road", "Soldier Bazar", "Stadium", "Stadium Road", "Star Gate", "Tariq Road", "Teen Talwar", "Tipu Sultan Road", "Urdu Science College", "Usman Memmoiral", "ZamZama", "Zubaida Hospital"
 
 **4 Buses:**
 - Bus 1-B (5 stops)
